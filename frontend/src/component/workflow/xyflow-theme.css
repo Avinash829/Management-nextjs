@@ -1,0 +1,12 @@
+.react-flow__edge-path {
+    stroke-width: 2 !important;
+    stroke: #b1b1b6;
+}
+
+.react-flow__node {
+    transition: transform 0.2s ease;
+}
+
+.react-flow__node:hover {
+    transform: scale(1.03);
+}
