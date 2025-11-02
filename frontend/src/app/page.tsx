@@ -83,8 +83,9 @@ export default function Home() {
                     </div>
                 </div>
             ) : (
-                <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex flex-col lg:flex-row gap-6 w-full">
+                    {/* Main Board */}
+                    <div className="flex flex-row flex-wrap sm:flex-nowrap gap-4 overflow-x-auto no-scrollbar w-full pb-4">
                         <ProgressCol
                             title="In Pending"
                             color="#5030E5"
@@ -150,7 +151,7 @@ export default function Home() {
                         />
                     </div>
 
-                    <aside className="w-full md:w-80 flex flex-col gap-6 mr-10">
+                    <aside className="w-full sm:w-[90%] md:w-[80%] lg:w-80 flex flex-col gap-6 lg:mr-10 mx-auto">
                         <TeamWorkload selectedTask={selectedTask} />
                         <CalendarWidget selectedTask={null} />
                     </aside>

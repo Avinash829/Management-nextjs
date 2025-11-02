@@ -10,8 +10,6 @@ import React, {
 } from "react";
 import {
     addEdge,
-    Background,
-    Controls,
     Connection,
     ConnectionLineType,
     useNodesState,
@@ -70,7 +68,7 @@ const CustomNode = ({ data }: any) => {
     return (
         <div
             onDoubleClick={handleDoubleClick}
-            className="bg-white text-[#0D062D] px-6 py-3 rounded-[25px] shadow-md text-center w-48 border border-gray-100"
+            className="bg-white text-[#0D062D] px-6 py-3 rounded-[25px] shadow-md text-center w-48 border border-gray-100 break-words overflow-hidden"
         >
             <Handle
                 type="target"
@@ -87,7 +85,9 @@ const CustomNode = ({ data }: any) => {
                     autoFocus
                 />
             ) : (
-                <div className="font-medium text-[15px]">{label}</div>
+                <div className="font-medium text-[15px] whitespace-normal break-words">
+                    {label}
+                </div>
             )}
             <Handle
                 type="source"
@@ -114,7 +114,7 @@ const NoteNode = ({ data }: any) => {
     return (
         <div
             onDoubleClick={handleDoubleClick}
-            className="bg-gray-200 text-[#0D062D] px-4 py-3 rounded-[25px] shadow-sm w-44 border border-gray-200 text-center"
+            className="bg-gray-200 text-[#0D062D] px-6 py-3 rounded-[25px] shadow-md text-center w-48 border border-gray-200 break-words overflow-hidden"
         >
             <Handle
                 type="target"
@@ -123,7 +123,7 @@ const NoteNode = ({ data }: any) => {
             />
             {isEditing ? (
                 <input
-                    className="bg-transparent border-b border-gray-400 outline-none text-center w-full text-[14px]"
+                    className="bg-transparent border-b border-gray-400 outline-none text-center w-full text-[15px]"
                     value={label}
                     onChange={(e) => setLabel(e.target.value)}
                     onBlur={handleBlur}
@@ -131,7 +131,9 @@ const NoteNode = ({ data }: any) => {
                     autoFocus
                 />
             ) : (
-                <div className="font-medium">{label}</div>
+                <div className="font-medium text-[15px] whitespace-normal break-words">
+                    {label}
+                </div>
             )}
             <Handle
                 type="source"

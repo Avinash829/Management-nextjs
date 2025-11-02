@@ -27,17 +27,19 @@ export default function ProgressCol({
     const count = tasks.length;
 
     return (
-        <div className="bg-white rounded-2xl shadow-sm p-5 flex flex-col w-[360px] mt-10">
-            <div className="flex items-center justify-between mb-5">
-                <div className="flex items-center gap-2">
+        <div className="bg-white rounded-2xl shadow-sm p-4 sm:p-5 flex flex-col w-full sm:w-[300px] md:w-[360px] lg:w-[400px] mt-5 sm:mt-8 md:mt-10 transition-all">
+            <div className="flex items-center justify-between mb-4 sm:mb-5">
+                <div className="flex items-center gap-2 flex-wrap">
                     <span
                         className="h-2 w-2 rounded-full"
                         style={{ backgroundColor: color }}
                     ></span>
 
-                    <h2 className="text-l text-gray-900">{title}</h2>
+                    <h2 className="text-base sm:text-lg text-gray-900 font-medium">
+                        {title}
+                    </h2>
 
-                    <span className="text-gray-600 text-xs bg-gray-200 px-2 py-[2px] rounded-full">
+                    <span className="text-gray-600 text-xs sm:text-sm bg-gray-200 px-2 py-[2px] rounded-full">
                         {count}
                     </span>
                 </div>
@@ -54,15 +56,14 @@ export default function ProgressCol({
                 )}
             </div>
 
+            {/* Top Border */}
             <div
                 className="w-full border-t rounded"
                 style={{ borderColor: color, borderTopWidth: "3px" }}
             ></div>
 
-            <div
-                className="flex flex-col gap-4 mt-5 overflow-y-auto no-scrollbar"
-                style={{ maxHeight: "100vh" }}
-            >
+            {/* Task List */}
+            <div className="flex flex-col gap-4 mt-4 sm:mt-5 overflow-y-auto no-scrollbar max-h-[70vh] sm:max-h-[80vh] md:max-h-[90vh]">
                 {tasks.map((task, i) => (
                     <div key={i} onClick={() => onTaskSelect(task)}>
                         <TaskCard {...task} />

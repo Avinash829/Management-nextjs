@@ -16,3 +16,17 @@ body {
     background-size: 20px 20px;
     background-repeat: repeat;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.avatar-overlap {
+    display: inline-flex;
+    gap: 0;
+    margin-left: 0;
+}
